@@ -1,4 +1,9 @@
 #!/usr/bin/python3
-"""create empty class"""
+
+"""Create an empty class called Rectangle"""
+
+
 class Rectangle:
-    pass
+    """Empty rectangle class"""
+
+            pass
