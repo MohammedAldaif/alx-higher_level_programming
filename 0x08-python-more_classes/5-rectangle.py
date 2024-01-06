@@ -49,3 +49,20 @@ class Rectangle:
             return 0
         return 2 * (self.height + self.width)
 
+    def __str__(self):
+        """Sets the print behavior of the Rectangle object."""
+        rectangle = ""
+
+        if self.__width > 0 and self.__height > 0:
+            for y in range(self.__height):
+                rectangle += '#' * self.__width + '\n'
+
+        return rectangle[:-1]
+
+    def __repr__(self):
+        """Return a string representation"""
+        return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
+
+    def __del__(self):
+        """Sets the del behavior of the Rectangle object."""
+        print("Bye rectangle...")
