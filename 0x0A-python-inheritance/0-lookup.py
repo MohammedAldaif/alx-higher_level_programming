@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash/python3
 
 """description"""
 def lookup(obj):
