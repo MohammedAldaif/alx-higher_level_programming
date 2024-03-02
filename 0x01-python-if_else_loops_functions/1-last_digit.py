@@ -5,7 +5,10 @@ import random
 number = random.randint(-10000, 10000)
 
 # Get the last digit of the number, preserving the sign
-last_digit = abs(number) % 10
+if number < 0:
+    last_digit = (abs(number) % 10) * -1
+else:
+    last_digit = abs(number) % 10
 result = "Last digit of {} is {} and is".format(number, last_digit)
 
 # Check conditions and append to result string
