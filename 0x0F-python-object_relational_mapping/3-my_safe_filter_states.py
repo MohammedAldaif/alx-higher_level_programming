@@ -49,7 +49,6 @@ def safe_filter_states(username: str, password: str, database_name: str, state_n
     cursor.close()
     db.close()
 
-if __name__ == "__main__":
-    
 
+if __name__ == "__main__":
     safe_filter_states(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4])
