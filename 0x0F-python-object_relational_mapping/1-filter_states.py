@@ -7,6 +7,7 @@ database hbtn_0e_0_usa.
 import MySQLdb
 import sys
 
+
 def filter_states(username: str, password: str, database_name: str) -> None:
     """
     Connects to the MySQL server and retrieves states starting with 'N'
@@ -46,6 +47,7 @@ def filter_states(username: str, password: str, database_name: str) -> None:
     # Close cursor and database connection
     cursor.close()
     db.close()
+
 
 if __name__ == "__main__":
     if len(sys.argv) != 4:
