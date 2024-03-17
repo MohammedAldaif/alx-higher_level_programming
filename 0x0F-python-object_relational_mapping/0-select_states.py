@@ -26,7 +26,8 @@ def list_states(username, password, database):
                              user=username,
                              passwd=password,
                              db=database)
-        # Create cursor object
+        #test
+        iCreate cursor object
         cursor = db.cursor()
 
         # Execute SQL query to fetch distinct states
