@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 def print_tebahpla():
     i = 122
     while i >= 97:
