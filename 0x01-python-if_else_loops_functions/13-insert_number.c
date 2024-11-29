@@ -1,45 +1,30 @@
+#include <stdlib.h>
 #include "lists.h"
 
-/**
- * insert_node - function
- * @head: pointer
- * @number: int
- * Return: pointer to struct
- */
+listint_t *insert_node(listint_t **head, int n) {
+    listint_t *new;
+    listint_t *current;
+    listint_t *step = NULL;
 
-listint_t *insert_node(listint_t **head, int number)
-{
-	listint_t *new;
-	listint_t *current;
-	listint_t *temp;
+    current = *head;
 
-	current = *head;
+    // Allocate memory for the new node
+    new = malloc(sizeof(listint_t));
+    if (new == NULL)
+        return (NULL);
 
-	new = malloc(sizeof(listint_t));
-	temp = malloc(sizeof(listint_t));
-	if (new == NULL)
-		return (NULL);
-	if (temp == NULL)
-		return (NULL);
-	new->n = number;
-	new->next = NULL;
+    new->n = n;
+    new->next = NULL;
 
-	if (*head == NULL)
-		*head = new;
-	else
-	{
-		while (current->next != NULL)
-		{
-			if (current->next->n > new->n)
-			{
-				temp = current->next;
-				current->next = new;
-				new->next = temp;
-				break;
-			}
-			current = current->next;
-		}
-		current->next = new;
-	}
-	return (new);
+    // Traverse the list to find the correct position
+    while (current->next != NULL && current->next->n < n) {
+        current = current->next;
+        step = current->next;
+    }
+
+    // Insert the new node
+    current->next = new;
+    new->next = step;
+
+    return (new);
 }
